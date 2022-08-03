@@ -1,0 +1,14 @@
+{
+  "name": "projeto-to-do",
+  "version": "1.0.0",
+  "description": "Projeto v360",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Nathalia Santos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
