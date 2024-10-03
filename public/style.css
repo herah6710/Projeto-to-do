@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Quicksand, Arial;
+  
+}
+
+body {
+  background-color: #e7e7e7;
+  width: auto;
+  height: auto;
+  color: #fff;
+}
+
+header {
+  background-color: #4643ff;
+  padding: 2.5rem;
+  text-align: center;
+  border: rgb(0, 0, 0); 
+  border-bottom: 1px;
+  
+}
+
+
+header h1 {
+  padding-bottom: 2rem;
+  color: #000;
+  font-weight: bold;
+}
+
+::placeholder{
+  color: rgb(109, 109, 109);
+  
+  font-style: italic;
+}
+input {
+  margin: 0;
+  border: #000000;
+  border-radius: 15px;
+  width: 70%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgb(175, 175, 175);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+button {
+  padding: 0.6rem;
+  width: 25%;
+  background-color: #1c9e0e;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0ac704;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+section#tasks {
+  margin: 0.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+/* linha par */
+ul li {
+  position: relative;
+  padding: 0.5rem;
+  background-color: #3735DB;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #000000;
+  padding-left: 2rem;
+}
+
+ul li span {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+ul li div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+ul li:nth-child(odd) {  /* linha ímpar */
+  background: #32325C;
+}
+
+ul li:hover {
+  background: #7B7AE1;
+}
+
+a.btnUpdate {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #ccc;
+  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+}
+
+a.btnUpdate:hover {
+  background: #3643f4;
+  color: #fff;
+}
+
+a.btnDelete {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #ccc;
+  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+}
+
+a.btnDelete:hover {
+  background: #f44336;
+  color: #fff;
+}
+
+section#modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00000080;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  border-radius: 15px;
+}
+
+div#card {
+  width: 30rem;
+  position: relative;
+  background-color: #202024;
+}
+div#head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+div#card h2 {
+  margin: 0;
+}
+
+div#card a#close {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+div#card a#close:hover {
+  background-color: #ff0000;
+  border-radius: 5rem;
+  padding: 0 0.3rem;
+}
+
+div#card hr {
+  width: 90%;
+  margin: 0 auto;
+}
+
+div#card p {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+div#btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+div#btns a {
+  text-decoration: none;
+  padding: 0.5rem;
+  width: 7rem;
+  text-align: center;
+  background-color: #202024;
+  font-size: 1.5rem;
+}
+
+div#btns a#btnNot {
+  color: #ff0000;
+  border: solid 1px #ff0000;
+  margin-right: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+div#btns a#btnNot:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+div#btns a#btnYes {
+  color: #00d836;
+  border: solid 1px #00aa2a;
+  transition: all 0.4s ease-in-out;
+}
+
+div#btns a#btnYes:hover {
+  background-color: #00df38;
+  color: #fff;
+}
+
+.message {
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-danger {
+  background-color: rgb(247, 0, 0);
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.message-success {
+  background-color: rgb(0, 114, 34);
+  color: #ffffff;
+  text-align: center;
+}
+
+span#close-message {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+  padding-left: 2rem;
+}
+
+span#close-message:hover {
+  color: rgb(255, 0, 0);
+}
+
+ul li.check-true {
+  background-color: #888888;
+  color: #fff;
+  text-decoration: line-through;
+  
+}
+
+ul li a.check-true::before {
+  content: "";
+  position: absolute;
+  border: #fff solid;
+  top: 17px;
+  left: 16px;
+  height: 15px;
+  width: 7px;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+ul li a.check-false::before {
+  content: "";
+  position: absolute;
+  border: #fff solid;
+  top: 20px;
+  left: 16px;
+  height: 13px;
+  width: 13px;
+  border-width: 2px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    
+    <title>To Do List</title>
+</head>
+
+<body>
+
+
+
+    <% if (message != "") {%>
+        <%- include('./componentes/messages', {message: message, type: type})  %>
+    <% } %>
+    
+
+    <header>
+        <% if (list==null) { %>
+            <%- include('./componentes/listForm', {titleForm: "TO DO LIST", action: "createList", value: "", idBtn: "addButton", nameBtn: "Criar Lista"})%>
+        <% } else { %>
+            <%- include('./componentes/form', {titleForm: `Editar lista: ${list.name}`, action: `updateOneList/${list._id}`, value: list.name, idBtn: "updateButton", nameBtn: "Atualizar"}) %>
+        <% } %>
+
+
+    </header>
+
+    <section id="tasks">
+        <ul>
+            <% lists.forEach((list)=>{ %>
+                <li class="">
+                    <span><%= list.name %></span>
+                    <div>
+                        <a class="btnUpdate" href="/getList/<%= list._id %>"><i class="bi bi-arrows-move"></i></a>
+                        <a class="btnUpdate" href="/getByIdList/<%= list._id %>/update"><i class="bi bi-pencil-square"></i></a>
+                        <a class="btnDelete" href="/getByIdList/<%= list._id %>/delete"><i class="bi bi-trash"></i></a>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </section>
+
+    <% if (listDelete !=null) { %>
+        <%- include('./componentes/modalDelList', {list: listDelete})  %>
+    <% } %>
+
+
+            <script src="script.js"></script>
+</body>
+
+</html>
